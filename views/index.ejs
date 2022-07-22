@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather Information</title>
+  </head>
+  <body class="bg-dark">
+    <form action="/" method="post" class="input-group" style="width: 30%">
+      <input
+        type="text"
+        class="form-control me-3"
+        placeholder="Location"
+        name="location"
+        autofocus
+        required
+      />
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="submit">Go!</button>
+      </span>
+    </form>
+    <div class="box container-fluid col-6 bg-secondary">
+      <div id="weather-icon">
+        <img src="<%=iconurl%>" alt="weather Image" width="72" height="57" />
+      </div>
+      <div class="info">
+        <h2 class="location">
+          <i class="fas fa-street-view" style="color: #fff"></i>
+          <span> <%= description%> </span>
+        </h2>
+        <p id="date" class="mt-5 mb-5">
+          Measured on
+          <span class="week"></span> | <span class="date"></span> |
+          <span class="time"></span>
+        </p>
+        <h1 class="temp"><%= temp%>℃</h1>
+        <h3 class="minmax">
+          [temp_min = <%= temp_min%> ] and [ temp_max is <%= temp_max%>]
+        </h3>
+      </div>
+    </div>
+    <footer>~Umang Bhardwaj</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="indexScript.js"></script>
+  </body>
+</html>
