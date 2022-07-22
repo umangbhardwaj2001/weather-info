@@ -1,6 +1,7 @@
 const express = require("express");
 const https = require("https");
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
@@ -41,6 +42,6 @@ app.post("/",function(request,response){
     });
 });
 
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log("server is running on 3000 port");
 })
